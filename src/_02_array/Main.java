@@ -15,17 +15,17 @@ public class Main {
 //        int [] arr = {11,22,33,44};
         Main main = new Main();
 
-        main.printArray(main.array);
+        main.printArray();
         System.out.println();
         main.clear();
-        main.printArray(main.array);
+        main.printArray();
 
         for (int i = 0; i < 6; i++){
             main.add(100, 3);
         }
 
         System.out.println();
-        main.printArray(main.array);
+        main.printArray();
 //        for (int i = 0; i < arr.length; i++) {
 //            System.out.print(arr[i] + " ");
 //        }
@@ -53,7 +53,7 @@ public class Main {
      * 3. 在添加的过程中，如果容量不够，需要扩容
      */
     public void add(int element, int index) {
-        if (index < 0 || index > array.length)  return;
+        if (index < 0 || index > size)  return;
         extendCapacity(size + 1);
 
         if (index == size){
@@ -96,7 +96,7 @@ public class Main {
 
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
-            int randNum = random.nextInt(100); //[0, 100)
+            int randNum = random.nextInt(range); //[0, 100)
             array[i] = randNum;
         }
 
@@ -104,7 +104,7 @@ public class Main {
 
     }
 
-    public void printArray(int[] array){
+    public void printArray(){
         for (int i = 0; i < array.length; i++) {
             if (i < array.length - 1)  System.out.print(array[i] + " ");
             else System.out.print(array[i]);
